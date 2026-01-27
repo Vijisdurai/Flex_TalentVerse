@@ -1,0 +1,15 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/Zoom Backgrounds_Solid blue.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.layout__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

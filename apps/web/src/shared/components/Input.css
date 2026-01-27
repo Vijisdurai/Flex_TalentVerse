@@ -1,0 +1,122 @@
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.input-field__label {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+}
+
+.input-field__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field__icon {
+    position: absolute;
+    left: var(--space-md);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.input-field__input {
+    width: 100%;
+    font-family: var(--font-primary);
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+    outline: none;
+}
+
+.input-field__input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.input-field__input:hover:not(:focus) {
+    border-color: #B0B0B0;
+}
+
+.input-field__input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 154, 221, 0.12);
+    outline: none;
+}
+
+.input-field--error .input-field__input {
+    border-color: var(--color-error);
+}
+
+.input-field--error .input-field__input:focus {
+    box-shadow: 0 0 0 2px rgba(186, 37, 125, 0.12);
+}
+
+.input-field__toggle {
+    position: absolute;
+    right: var(--space-sm);
+    padding: var(--space-sm);
+    background: transparent;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+}
+
+.input-field__toggle:hover {
+    color: var(--color-text);
+}
+
+.input-field__helper {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: -4px;
+}
+
+.input-field__helper--error {
+    color: var(--color-error);
+}
+
+/* Sizes */
+.input-field--sm .input-field__input {
+    height: 36px;
+    padding: 0 var(--space-md);
+}
+
+.input-field--sm .input-field__wrapper:has(.input-field__icon) .input-field__input {
+    padding-left: 40px;
+}
+
+.input-field--md .input-field__input {
+    height: 44px;
+    padding: 0 var(--space-md);
+}
+
+.input-field--md .input-field__wrapper:has(.input-field__icon) .input-field__input {
+    padding-left: 44px;
+}
+
+.input-field--lg .input-field__input {
+    height: 52px;
+    padding: 0 var(--space-lg);
+}
+
+.input-field--lg .input-field__wrapper:has(.input-field__icon) .input-field__input {
+    padding-left: 52px;
+}
+
+/* Password input needs extra padding for toggle */
+.input-field__wrapper:has(.input-field__toggle) .input-field__input {
+    padding-right: 44px;
+}

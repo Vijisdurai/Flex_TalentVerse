@@ -1,0 +1,240 @@
+/* =====================================================
+   FLEX TALENTVERSE - DESIGN SYSTEM
+   Brand tokens & global styles per rules.md
+   ===================================================== */
+
+/* CSS Variables - Flex Brand Palette */
+:root {
+  /* Neutral Colors */
+  --color-white: #FFFFFF;
+  --color-light-grey: #F2F2F2;
+  --color-dark-grey: #262626;
+
+  /* Brand Blue Colors */
+  --color-flex-blue: #009ADD;
+  --color-dark-blue: #005486;
+
+  /* Accent Colors */
+  --color-green: #82BC00;
+  --color-dark-green: #006432;
+  --color-fuchsia: #BA257D;
+  --color-dark-fuchsia: #7F1E5E;
+  --color-gold: #F1B52C;
+  --color-dark-gold: #CE6D28;
+
+  /* Semantic Aliases */
+  --color-primary: var(--color-flex-blue);
+  --color-primary-hover: var(--color-dark-blue);
+  --color-surface: var(--color-white);
+  --color-surface-alt: var(--color-light-grey);
+  --color-text: var(--color-dark-grey);
+  --color-text-muted: #666666;
+  --color-border: #E0E0E0;
+  --color-success: var(--color-green);
+  --color-success-hover: var(--color-dark-green);
+  --color-error: var(--color-fuchsia);
+  --color-error-hover: var(--color-dark-fuchsia);
+  --color-warning: var(--color-gold);
+  --color-warning-hover: var(--color-dark-gold);
+
+  /* Gradients */
+  --gradient-blue: linear-gradient(180deg, #009ADD 0%, #005486 100%);
+  --gradient-green: linear-gradient(135deg, #82BC00 0%, #006432 100%);
+  --gradient-fuchsia: linear-gradient(135deg, #BA257D 0%, #7F1E5E 100%);
+  --gradient-gold: linear-gradient(135deg, #F1B52C 0%, #CE6D28 100%);
+
+  /* Typography */
+  --font-primary: 'ITC Avant Garde Gothic Pro', 'Century Gothic', 'Avenir', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-page: 400ms ease-out;
+}
+
+/* CSS Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Scale */
+h1 {
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+/* Link Styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Focus States for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Utility Classes */
+.animate-fade-in {
+  animation: fadeIn var(--transition-page) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--transition-page) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--transition-slow) forwards;
+}
+
+/* Responsive Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-xl);
+  }
+}

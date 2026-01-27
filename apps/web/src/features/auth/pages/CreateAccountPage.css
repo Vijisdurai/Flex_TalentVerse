@@ -1,0 +1,187 @@
+.create-account-page {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.create-account-form__section {
+    margin-bottom: var(--space-xs);
+}
+
+.create-account-form__section-title {
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+}
+
+.create-account-form__roles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+@media (max-width: 540px) {
+    .create-account-form__roles {
+        grid-template-columns: 1fr;
+    }
+}
+
+.create-account-form__password-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+@media (max-width: 540px) {
+    .create-account-form__password-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.create-account-form__terms {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: 0.875rem;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.create-account-form__terms input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.create-account-form__terms a {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.create-account-form__divider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+}
+
+.create-account-form__divider::before,
+.create-account-form__divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.create-account-form__college-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, rgba(0, 154, 221, 0.06) 0%, rgba(0, 84, 134, 0.08) 100%);
+    border: 1px solid rgba(0, 154, 221, 0.15);
+    border-radius: var(--radius-lg);
+}
+
+.create-account-form__college-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+}
+
+.create-account-form__college-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.create-account-form__college-content h4 {
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.create-account-form__college-content p {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+}
+
+.create-account-form__college-link {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+    white-space: nowrap;
+}
+
+@media (max-width: 540px) {
+    .create-account-form__college-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .create-account-form__college-link {
+        align-self: flex-start;
+    }
+}
+
+.create-account-page__footer {
+    text-align: center;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-md);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.create-account-page__footer a {
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Success State */
+.create-account-success {
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+.create-account-success__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(130, 188, 0, 0.15) 0%, rgba(0, 100, 50, 0.2) 100%);
+    border-radius: var(--radius-full);
+    color: var(--color-success);
+}
+
+.create-account-success p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.create-account-success__actions {
+    display: flex;
+    justify-content: center;
+}
