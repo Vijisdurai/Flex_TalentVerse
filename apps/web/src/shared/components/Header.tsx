@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Button from './Button'
 import './Header.css'
 
 function Header() {
+    const navigate = useNavigate()
+
     return (
         <header className="header">
             <div className="header__container">
@@ -23,14 +26,13 @@ function Header() {
                 </Link>
 
                 <nav className="header__nav">
-                    <a href="#help" className="header__link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                            <line x1="12" y1="17" x2="12.01" y2="17" />
-                        </svg>
-                        <span>Help Center</span>
-                    </a>
+                    <Button
+                        variant="primary"
+                        size="md"
+                        onClick={() => navigate('/auth/role-selection')}
+                    >
+                        Sign Up / Login
+                    </Button>
                 </nav>
             </div>
         </header>
@@ -38,3 +40,4 @@ function Header() {
 }
 
 export default Header
+
