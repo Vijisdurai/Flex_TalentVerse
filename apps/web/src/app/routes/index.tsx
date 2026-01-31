@@ -4,6 +4,7 @@ import CreateAccountPage from '../../features/auth/pages/CreateAccountPage'
 import RequestCollegeAccessPage from '../../features/auth/pages/RequestCollegeAccessPage'
 import { HRDashboardPage } from '../../features/hr-dashboard'
 import PlaceholderPage from '../../features/hr-dashboard/pages/PlaceholderPage'
+import { JobPostingsPage, CreateJobPage } from '../../features/hr-job-postings'
 
 function AppRoutes() {
     return (
@@ -13,7 +14,10 @@ function AppRoutes() {
             <Route path="/create-account" element={<CreateAccountPage />} />
             <Route path="/request-college-access" element={<RequestCollegeAccessPage />} />
             <Route path="/hr-dashboard" element={<HRDashboardPage />} />
-            <Route path="/hr-dashboard/job-postings" element={<PlaceholderPage />} />
+            <Route path="/hr-dashboard/job-postings" element={<JobPostingsPage />} />
+            <Route path="/hr-dashboard/job-postings/create" element={<CreateJobPage />} />
+            <Route path="/hr-dashboard/job-postings/:id" element={<PlaceholderPage />} />
+            <Route path="/hr-dashboard/job-postings/:id/edit" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/applications/*" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/candidates" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/interviews/*" element={<PlaceholderPage />} />
