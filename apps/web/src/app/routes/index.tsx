@@ -8,6 +8,8 @@ import { JobPostingsPage, CreateJobPage } from '../../features/hr-job-postings'
 import { ApplicationsPage } from '../../features/hr-applications'
 import { CandidateProfilePage, CandidatesListPage } from '../../features/hr-candidates'
 import { InterviewsPage, ScheduleInterviewPage } from '../../features/interviews'
+import { EventsPage } from '../../features/events'
+import { NotificationsPage } from '../../features/notifications'
 
 function AppRoutes() {
     return (
@@ -26,8 +28,8 @@ function AppRoutes() {
             <Route path="/hr-dashboard/candidates" element={<CandidatesListPage />} />
             <Route path="/hr-dashboard/interviews" element={<InterviewsPage />} />
             <Route path="/hr-dashboard/interviews/schedule" element={<ScheduleInterviewPage />} />
-            <Route path="/hr-dashboard/events" element={<PlaceholderPage />} />
-            <Route path="/hr-dashboard/notifications" element={<PlaceholderPage />} />
+            <Route path="/hr-dashboard/events" element={<EventsPage />} />
+            <Route path="/hr-dashboard/notifications" element={<NotificationsPage />} />
             <Route path="/hr-dashboard/settings" element={<PlaceholderPage />} />
         </Routes>
     )

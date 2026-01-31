@@ -2,10 +2,13 @@ import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useTheme } from '../../../shared/providers/ThemeContext'
 
+import { useNotifications } from '../../notifications'
+
 const HRSidebar: React.FC = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const { theme } = useTheme()
+    const { unreadCount } = useNotifications()
     const isDark = theme === 'dark'
 
     // Dark Mode: Dark gray. Light Mode: Flex Blue.
@@ -18,7 +21,7 @@ const HRSidebar: React.FC = () => {
         { name: 'Candidates', path: '/hr-dashboard/candidates', icon: <CandidatesIcon /> },
         { name: 'Interviews', path: '/hr-dashboard/interviews', icon: <InterviewsIcon /> },
         { name: 'Events', path: '/hr-dashboard/events', icon: <EventsIcon /> },
-        { name: 'Notifications', path: '/hr-dashboard/notifications', icon: <NotificationsIcon /> },
+        { name: 'Notifications', path: '/hr-dashboard/notifications', icon: <NotificationsIcon />, badge: unreadCount > 0 ? unreadCount : undefined },
     ]
 
     const isActive = (path: string) => {
@@ -75,7 +78,21 @@ const HRSidebar: React.FC = () => {
                         }}
                     >
                         {item.icon}
-                        <span>{item.name}</span>
+                        <span style={{ flex: 1 }}>{item.name}</span>
+                        {item.badge !== undefined && (
+                            <span style={{
+                                backgroundColor: '#009ADD',
+                                color: '#FFFFFF',
+                                fontSize: '12px',
+                                fontWeight: 'bold',
+                                padding: '2px 8px',
+                                borderRadius: '10px',
+                                minWidth: '16px',
+                                textAlign: 'center'
+                            }}>
+                                {item.badge}
+                            </span>
+                        )}
                     </div>
                 ))}
             </nav>
