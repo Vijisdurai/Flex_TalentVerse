@@ -6,6 +6,8 @@ import { HRDashboardPage } from '../../features/hr-dashboard'
 import PlaceholderPage from '../../features/hr-dashboard/pages/PlaceholderPage'
 import { JobPostingsPage, CreateJobPage } from '../../features/hr-job-postings'
 import { ApplicationsPage } from '../../features/hr-applications'
+import { CandidateProfilePage, CandidatesListPage } from '../../features/hr-candidates'
+import { InterviewsPage, ScheduleInterviewPage } from '../../features/interviews'
 
 function AppRoutes() {
     return (
@@ -20,8 +22,10 @@ function AppRoutes() {
             <Route path="/hr-dashboard/job-postings/:id" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/job-postings/:id/edit" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/applications" element={<ApplicationsPage />} />
-            <Route path="/hr-dashboard/candidates" element={<PlaceholderPage />} />
-            <Route path="/hr-dashboard/interviews/*" element={<PlaceholderPage />} />
+            <Route path="/hr-dashboard/applications/:candidateId" element={<CandidateProfilePage />} />
+            <Route path="/hr-dashboard/candidates" element={<CandidatesListPage />} />
+            <Route path="/hr-dashboard/interviews" element={<InterviewsPage />} />
+            <Route path="/hr-dashboard/interviews/schedule" element={<ScheduleInterviewPage />} />
             <Route path="/hr-dashboard/events" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/notifications" element={<PlaceholderPage />} />
             <Route path="/hr-dashboard/settings" element={<PlaceholderPage />} />
