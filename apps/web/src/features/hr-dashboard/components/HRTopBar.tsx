@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useTheme } from '../../../shared/providers/ThemeContext'
 
 const HRTopBar: React.FC = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { theme, toggleTheme } = useTheme()
+    const isDarkMode = theme === 'dark'
 
-    // Toggle function logic for visual interaction
-    // Note: In a real app, this would use a theme context to switch CSS variables
-    const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode)
-    }
+    const bg = isDarkMode ? '#111827' : '#FFFFFF'
+    const border = isDarkMode ? '#374151' : '#E0E0E0'
+    const textMain = isDarkMode ? '#F9FAFB' : '#262626'
 
     return (
         <header style={{
             height: '80px',
-            backgroundColor: '#FFFFFF',
-            borderBottom: '1px solid #E0E0E0',
+            backgroundColor: bg,
+            borderBottom: `1px solid ${border}`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -27,7 +27,7 @@ const HRTopBar: React.FC = () => {
                 fontSize: '24px',
                 fontWeight: 'bold',
                 fontFamily: 'ITC Avant Garde Gothic Pro, sans-serif',
-                color: '#262626',
+                color: textMain,
                 margin: 0
             }}>Dashboard</h1>
 

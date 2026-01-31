@@ -1,9 +1,15 @@
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useTheme } from '../../../shared/providers/ThemeContext'
 
 const HRSidebar: React.FC = () => {
     const navigate = useNavigate()
     const location = useLocation()
+    const { theme } = useTheme()
+    const isDark = theme === 'dark'
+
+    // Dark Mode: Dark gray. Light Mode: Flex Blue.
+    const bgColor = isDark ? '#1F2937' : '#005486'
 
     const menuItems = [
         { name: 'Dashboard', path: '/hr-dashboard', icon: <DashboardIcon /> },
@@ -24,7 +30,7 @@ const HRSidebar: React.FC = () => {
     return (
         <aside style={{
             width: '260px',
-            backgroundColor: '#005486',
+            backgroundColor: bgColor,
             color: '#FFFFFF',
             display: 'flex',
             flexDirection: 'column',
