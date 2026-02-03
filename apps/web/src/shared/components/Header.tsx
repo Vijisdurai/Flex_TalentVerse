@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import DarkModeToggle from './DarkModeToggle'
 import './Header.css'
 
 function Header() {
@@ -31,6 +32,8 @@ function Header() {
                         </svg>
                         <span>Help Center</span>
                     </a>
+                    {/* Dark mode toggle positioned after Help Center */}
+                    <DarkModeToggle />
                 </nav>
             </div>
         </header>

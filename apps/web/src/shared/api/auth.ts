@@ -6,6 +6,7 @@ import { apiClient } from './client';
 export interface LoginRequest {
     email: string;
     password: string;
+    userType: 'student' | 'professional';
     rememberMe?: boolean;
 }
 
@@ -47,6 +48,21 @@ export interface CollegeAccessResponse {
     requestId: string;
 }
 
+// Google Login
+export interface GoogleLoginRequest {
+    credential: string;
+}
+
+// Google Registration
+export interface GoogleRegisterRequest {
+    credential: string;
+}
+
+export interface GoogleRegisterResponse {
+    message: string;
+    userId: number;
+}
+
 // --- API Service ---
 
 export const authApi = {
@@ -54,8 +70,16 @@ export const authApi = {
         return apiClient.post<LoginResponse>('/auth/login', data);
     },
 
+    googleLogin: (data: GoogleLoginRequest) => {
+        return apiClient.post<LoginResponse>('/auth/login/google', data);
+    },
+
     register: (data: RegisterRequest) => {
         return apiClient.post<RegisterResponse>('/auth/register', data);
+    },
+
+    googleRegister: (data: GoogleRegisterRequest) => {
+        return apiClient.post<GoogleRegisterResponse>('/auth/register/google', data);
     },
 
     requestCollegeAccess: (data: CollegeAccessRequest) => {

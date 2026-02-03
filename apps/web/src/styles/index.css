@@ -79,6 +79,29 @@
   --transition-page: 400ms ease-out;
 }
 
+/* Dark Mode Theme Variables */
+[data-theme="dark"] {
+  /* Inverted Neutral Colors - using warmer dark tones */
+  --color-surface: #121418;
+  --color-surface-alt: #1e2128;
+  --color-text: #f0f0f0;
+  --color-text-muted: #a0a0a0;
+  --color-border: #2a2f38;
+
+  /* Dark mode background gradient */
+  --color-page-bg: linear-gradient(145deg, #0d1117 0%, #161b22 50%, #1a1d24 100%);
+
+  /* Glow effects for cards and elevated elements */
+  --glow-primary: 0 0 20px rgba(0, 154, 221, 0.15);
+  --glow-card: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 154, 221, 0.08);
+
+  /* Enhanced shadows for dark mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-xl: var(--glow-card);
+}
+
 /* CSS Reset & Base Styles */
 *,
 *::before,
@@ -101,6 +124,11 @@ body {
   background-color: var(--color-surface);
   line-height: 1.5;
   min-height: 100vh;
+}
+
+/* Dark mode gradient background */
+[data-theme="dark"] body {
+  background: var(--color-page-bg);
 }
 
 #root {

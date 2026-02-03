@@ -64,7 +64,7 @@ async function request<T>(endpoint: string, options: RequestOptions = {}): Promi
 
         if (!response.ok) {
             throw new ApiError(
-                data.message || 'An error occurred while fetching data',
+                data.detail || data.message || 'An error occurred while fetching data',
                 response.status,
                 data
             );

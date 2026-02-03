@@ -7,6 +7,13 @@
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
     padding: var(--space-2xl);
+    transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Enhanced card appearance in dark mode */
+[data-theme="dark"] .auth-container {
+    border-color: rgba(0, 154, 221, 0.2);
+    box-shadow: var(--glow-card);
 }
 
 .auth-container__header {

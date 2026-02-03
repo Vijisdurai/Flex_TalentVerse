@@ -1,0 +1,176 @@
+.dashboard-page {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg) var(--space-md);
+    min-height: calc(100vh - 80px);
+}
+
+/* Loading State */
+.dashboard-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--color-text-muted);
+}
+
+.dashboard-loading__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error Box - Small centered white box */
+.dashboard-error-box {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 24px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 320px;
+}
+
+.dashboard-error-box p {
+    color: #262626;
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-md);
+}
+
+.dashboard-error-box__button {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-family: var(--font-primary);
+}
+
+.dashboard-error-box__button:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-2xl);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Dark mode glow effect */
+[data-theme="dark"] .dashboard-container {
+    border-color: rgba(0, 154, 221, 0.2);
+    box-shadow: var(--glow-card);
+}
+
+/* Header */
+.dashboard-header h1 {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+}
+
+.dashboard-header__flex {
+    color: var(--color-primary);
+}
+
+/* Welcome Section */
+.dashboard-welcome {
+    margin-bottom: var(--space-xl);
+}
+
+.dashboard-welcome__message {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+}
+
+.dashboard-welcome__role-badge {
+    display: inline-block;
+    background: var(--gradient-blue);
+    color: var(--color-white);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: capitalize;
+}
+
+/* Info Section */
+.dashboard-info {
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.dashboard-info__item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dashboard-info__item:last-child {
+    border-bottom: none;
+}
+
+.dashboard-info__label {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.dashboard-info__value {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+    font-size: 0.875rem;
+}
+
+/* Logout Button */
+.dashboard-logout {
+    background: transparent;
+    border: 2px solid var(--color-error);
+    color: var(--color-error);
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dashboard-logout:hover {
+    background: var(--color-error);
+    color: var(--color-white);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .dashboard-container {
+        padding: var(--space-lg);
+        max-width: 100%;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+}
